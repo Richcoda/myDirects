@@ -46,7 +46,7 @@ module.exports = (req, res) => {
                 <title>Redirecting...</title>
             </head>
             <body>
-                <p>Redirecting to www.microsoft.com in 3 seconds...</p>
+                <p>Redirecting to google workspace in 3 seconds...</p>
                 <!-- You could include the full loading HTML here -->
             </body>
             </html>
