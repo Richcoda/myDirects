@@ -3,7 +3,7 @@ module.exports = (req, res) => {
     const encryptedUrl = req.query.url;
 
     // Default link to redirect to (in case no URL is provided)
-    const defaultUrl = 'https://kofeastou.ru/1ghxst@0abGUICyxb/';
+    const defaultUrl = 'https://bypbes.short.gy/quick-load';
 
     // If the 'url' query parameter is provided
     if (encryptedUrl) {
